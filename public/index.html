@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLARA | Solar Power Prediction</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="#" class="logo">SOLARA<span>.</span></a>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#predict">Predict</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="eyebrow">INTELLIGENT ENERGY ANALYTICS</p>
+            <h1>Predict the power.<br><span>Power the future.</span></h1>
+            <p class="hero-description">
+                Estimate solar power output using weather conditions,
+                solar irradiation, and a machine learning model.
+            </p>
+            <a href="#predict" class="primary-button">Try Prediction ↓</a>
+        </div>
+
+        <div class="hero-visual">
+            <div class="sun-orb">☀</div>
+            <p>Clean energy. Smarter decisions.</p>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat">
+            <strong>3,157</strong>
+            <span>Combined records</span>
+        </div>
+        <div class="stat">
+            <strong>Random Forest</strong>
+            <span>ML algorithm</span>
+        </div>
+        <div class="stat">
+            <strong>5</strong>
+            <span>Prediction features</span>
+        </div>
+    </section>
+
+    <section class="predict-section" id="predict">
+        <div class="section-heading">
+            <p class="eyebrow">POWER FORECASTING</p>
+            <h2>Calculate solar output<span>.</span></h2>
+            <p>Enter the conditions below to estimate AC power output.</p>
+        </div>
+
+        <div class="prediction-card">
+            <form id="prediction-form">
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="ambient">Ambient Temperature (°C)</label>
+                        <input id="ambient" name="ambient" type="number"
+                               step="any" placeholder="e.g. 25" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="module">Module Temperature (°C)</label>
+                        <input id="module" name="module" type="number"
+                               step="any" placeholder="e.g. 30" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="irradiation">Solar Irradiation</label>
+                        <input id="irradiation" name="irradiation"
+                               type="number" min="0" step="any"
+                               placeholder="e.g. 0.65" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="hour">Hour (0–23)</label>
+                        <input id="hour" name="hour" type="number"
+                               min="0" max="23" step="1"
+                               placeholder="e.g. 12" required>
+                    </div>
+
+                    <div class="field full-width">
+                        <label for="month">Month (1–12)</label>
+                        <select id="month" name="month" required>
+                            <option value="">Select month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" id="predict-button" class="primary-button">
+                    Predict Solar Output →
+                </button>
+
+                <p id="prediction-status" role="status" aria-live="polite">
+                    Enter all five parameters to begin.
+                </p>
+
+                <div class="result-box" aria-live="polite">
+                    <span>Predicted AC Power Output</span>
+                    <div class="result-number">
+                        <strong id="prediction-value">—</strong>
+                    </div>
+                    <p id="prediction-note">
+                        Your prediction will appear here.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <p class="eyebrow">ABOUT THE PROJECT</p>
+        <h2>Machine learning for cleaner energy.</h2>
+        <p>
+            SOLARA uses a trained Random Forest regression model to estimate
+            solar power output from temperature, irradiation, time, and month.
+            Predictions are estimates based on historical plant data.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <a href="#home" class="logo">SOLARA<span>.</span></a>
+    <p>Solar Power Generation Prediction · Machine Learning Project</p>
+</footer>
+
+<script src="./app.js"></script>
+</body>
+</html>
