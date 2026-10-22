@@ -33,8 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             const response = await fetch(
-                "http://127.0.0.1:5000/api/predict",
-                {
+    (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+        ? "http://127.0.0.1:5000/api/predict"
+        : "/api/predict",
+    {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(payload)
